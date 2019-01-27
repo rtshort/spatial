@@ -1,7 +1,10 @@
 # spatial
 Some variations and samples on the scipy.spatial theme
 
-Programs and data in this repository.  None of this has been tested on a Windows machine.
+Note:  none of this has been tested on a Windows machine.  I don't think this even
+works with python2.
+
+Programs and data in this repository.
 
 - visible*: Data files in the qhull format for playing with visible facets.
 - spheredata*: Data files in the qhull format for playing with visible facets.
@@ -31,3 +34,13 @@ For example, from the command line:
 5 0 
 0 1 
 1 2 
+
+-- 2dvisible.py
+
+  Program to experiment with visible facets in 2d.  Lots of graphics and interactions.
+
+-- 3dvisible.py
+
+  Program to experiment with visible facets in 3d (nd actuall).  Just reads a file
+  and prints the results.
+
