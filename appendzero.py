@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-Takes a qhull file on the standard input, prepends the origin and
+Takes a 2d qhull file on the standard input, appends the origin and
 writes the modified file to the stdout in qhull format.
 """
 #
