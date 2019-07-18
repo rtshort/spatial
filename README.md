@@ -1,5 +1,10 @@
 # spatial
-Some variations and samples on the scipy.spatial theme
+
+Some variations and samples on the scipy.spatial theme.  All of the
+programs provided here should work right out of the box, but most of
+them will take a little effort to understand.  They are all noisy in
+the sense that interacting with the plot windows will print a lot of
+data to the standard output.
 
 Note: All of this was built on a debian stable distribution using the
 latest version of python3.x that comes with the distro.  In many cases
