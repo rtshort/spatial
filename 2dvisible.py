@@ -110,59 +110,61 @@ class Plots:
             self.fig1.canvas.draw()
             self.simplex = numpy.mod(self.simplex+1, len(self.hull.simplices))
 
-testcase = 1
+if __name__ == "__main__":
 
-if testcase==1:
-    npoints        = 6
-    include_center = True
-    jitter         = 0.25
-    center         = numpy.array([0,0])
-    radius         = 1
-    theta          = numpy.linspace(0,2*pi,npoints+1)[0:-1]
-    x              = radius*cos(theta) + center[0]
-    y              = radius*sin(theta) + center[1]
-    if (include_center):
-        x  = numpy.append(x,center[0])  # These two lines include the center
-        y  = numpy.append(y,center[1])  # in the generator list.
-    xs   = x + numpy.random.uniform(-jitter,jitter,x.shape)
-    ys   = y + numpy.random.uniform(-jitter,jitter,x.shape)
-    points = numpy.vstack((xs,ys)).T
-    npoints, ndim = points.shape
-elif (testcase==2):
-    filename = 'qhulldata/visible1'
-    ndim, points = readQhullFile(filename)
-    npoints = points.shape[0]
+    testcase = 1
 
-rtheta = 00*pi/180;
-rotmat = numpy.array([[cos(rtheta),sin(rtheta)],[-sin(rtheta),cos(rtheta)]])
-points = numpy.dot(points, rotmat)
-offset = numpy.array([2.0,2.0])
-points = points + offset
+    if testcase==1:
+        npoints        = 6
+        include_center = True
+        jitter         = 0.25
+        center         = numpy.array([0,0])
+        radius         = 1
+        theta          = numpy.linspace(0,2*pi,npoints+1)[0:-1]
+        x              = radius*cos(theta) + center[0]
+        y              = radius*sin(theta) + center[1]
+        if (include_center):
+            x  = numpy.append(x,center[0])  # These two lines include the center
+            y  = numpy.append(y,center[1])  # in the generator list.
+        xs   = x + numpy.random.uniform(-jitter,jitter,x.shape)
+        ys   = y + numpy.random.uniform(-jitter,jitter,x.shape)
+        points = numpy.vstack((xs,ys)).T
+        npoints, ndim = points.shape
+    elif (testcase==2):
+        filename = 'qhulldata/visible1'
+        ndim, points = readQhullFile(filename)
+        npoints = points.shape[0]
+
+    rtheta = 00*pi/180;
+    rotmat = numpy.array([[cos(rtheta),sin(rtheta)],[-sin(rtheta),cos(rtheta)]])
+    points = numpy.dot(points, rotmat)
+    offset = numpy.array([2.0,2.0])
+    points = points + offset
     
-npoints = len(points)
-vpoint  = numpy.array([0.0,0.0])
-epoints = numpy.vstack((points,vpoint))
+    npoints = len(points)
+    vpoint  = numpy.array([0.0,0.0])
+    epoints = numpy.vstack((points,vpoint))
+    
+    hull  = ConvexHull(points)
+    qhull_options = 'QG'+str(npoints)
+    print('qhull_options: ', qhull_options)
+    ehull = ConvexHull(epoints, qhull_options=qhull_options)
 
-hull  = ConvexHull(points)
-qhull_options = 'QG'+str(npoints)
-print('qhull_options: ', qhull_options)
-ehull = ConvexHull(epoints, qhull_options=qhull_options)
+    print('points\n', points)
+    print('simplices\n',  hull.simplices)
+    print('good\n',    hull.good)
+    print('epoints\n', epoints)
+    print('esimplices\n', ehull.simplices)
+    print('good\n',    ehull.good)
 
-print('points\n', points)
-print('simplices\n',  hull.simplices)
-print('good\n',    hull.good)
-print('epoints\n', epoints)
-print('esimplices\n', ehull.simplices)
-print('good\n',    ehull.good)
+    plots = Plots(ehull)
 
-plots = Plots(ehull)
-
-print()
-print('With focus in Convex Hull window')
-print('  n to print and highlight next generator point')
-print('  left to show next facet.  Highlighted green if good, red if not')
-print('  c to clear dynamic plot elements')
-print()
+    print()
+    print('With focus in Convex Hull window')
+    print('  n to print and highlight next generator point')
+    print('  left to show next facet.  Highlighted green if good, red if not')
+    print('  c to clear dynamic plot elements')
+    print()
 
 
-input('press enter to quit\n')
+    input('press enter to quit\n')

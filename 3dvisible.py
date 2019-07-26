@@ -15,36 +15,38 @@ import numpy
 from scipy.spatial import ConvexHull
 from pybob.spatial.qhullfile import readQhullFile
 
-# Read the qhull file.
+if __name__ == "__main__":
 
-filename = 'qhulldata/spheredata1'
+    # Read the qhull file.
 
-ndim,points  = readQhullFile(filename)
-npoints = len(points)
+    filename = 'qhulldata/spheredata1'
 
-points  = numpy.vstack((points,numpy.zeros(ndim)))
+    ndim,points  = readQhullFile(filename)
+    npoints = len(points)
 
-print(ndim,npoints)
-print(points)
+    points  = numpy.vstack((points,numpy.zeros(ndim)))
 
-# Compute the visible and invisible facets.
+    print(ndim,npoints)
+    print(points)
 
-qhull_options = "QG-"+str(npoints)
-hull = ConvexHull(points, qhull_options=qhull_options)
+    # Compute the visible and invisible facets.
 
-print('Not visible from the origin')
-print(hull.good)
-print(hull.points)
-print(hull.simplices)
+    qhull_options = "QG-"+str(npoints)
+    hull = ConvexHull(points, qhull_options=qhull_options)
 
-qhull_options = "QG"+str(npoints)
-hull = ConvexHull(points, qhull_options=qhull_options)
+    print('Not visible from the origin')
+    print(hull.good)
+    print(hull.points)
+    print(hull.simplices)
 
-print('Visible from the origin')
-print(hull.good)
-print(hull.points)
-print(hull.simplices)
+    qhull_options = "QG"+str(npoints)
+    hull = ConvexHull(points, qhull_options=qhull_options)
 
-print('Visible\n', hull.simplices[hull.good])
-print('Not visible\n', hull.simplices[~hull.good])
+    print('Visible from the origin')
+    print(hull.good)
+    print(hull.points)
+    print(hull.simplices)
+
+    print('Visible\n', hull.simplices[hull.good])
+    print('Not visible\n', hull.simplices[~hull.good])
 
