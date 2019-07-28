@@ -22,12 +22,12 @@ From the command line:
 2.28381929 1.26192649
 2.09812 1.80199967
 0.0 0.0
-> cat qhulldata/visible1 | ./appendzero.py | qhull i QG0 Qt
+> cat qhulldata/visible1 | ./appendzero.py | qhull i QG7 Qt
 3
 3 4 
 2 3 
 4 5 
-> cat qhulldata/visible1 | ./appendzero.py | qhull i QG-0 Qt
+> cat qhulldata/visible1 | ./appendzero.py | qhull i QG-7 Qt
 3
 5 0 
 0 1 
@@ -44,16 +44,18 @@ From the command line:
 import sys
 import numpy
 
-ndim    = int(sys.stdin.readline())
-npoints = int(sys.stdin.readline())
-points = numpy.zeros((npoints,ndim))
-for npt in range(npoints):
-    points[npt] = numpy.fromstring(sys.stdin.readline(), sep=' ')
+if __name__ == "__main__":
 
-points = numpy.vstack((points, numpy.zeros(ndim)))
+    ndim    = int(sys.stdin.readline())
+    npoints = int(sys.stdin.readline())
+    points = numpy.zeros((npoints,ndim))
+    for npt in range(npoints):
+        points[npt] = numpy.fromstring(sys.stdin.readline(), sep=' ')
 
-print(ndim)
-print(npoints+1)
+    points = numpy.vstack((points, numpy.zeros(ndim)))
 
-for row in points:
-    print(' '.join('%s' % p for p in row))
+    print(ndim)
+    print(npoints+1)
+
+    for row in points:
+        print(' '.join('%s' % p for p in row))
