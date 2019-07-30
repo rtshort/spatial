@@ -44,16 +44,18 @@ From the command line:
 import sys
 import numpy
 
-ndim    = int(sys.stdin.readline())
-npoints = int(sys.stdin.readline())
-points = numpy.zeros((npoints,ndim))
-for npt in range(npoints):
-    points[npt] = numpy.fromstring(sys.stdin.readline(), sep=' ')
+if __name__ == "__main__":
 
-points = numpy.vstack((points, numpy.zeros(ndim)))
+    ndim    = int(sys.stdin.readline())
+    npoints = int(sys.stdin.readline())
+    points = numpy.zeros((npoints,ndim))
+    for npt in range(npoints):
+        points[npt] = numpy.fromstring(sys.stdin.readline(), sep=' ')
 
-print(ndim)
-print(npoints+1)
+    points = numpy.vstack((points, numpy.zeros(ndim)))
 
-for row in points:
-    print(' '.join('%s' % p for p in row))
+    print(ndim)
+    print(npoints+1)
+
+    for row in points:
+        print(' '.join('%s' % p for p in row))
