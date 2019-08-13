@@ -1,7 +1,5 @@
 .. Doctor Bob's Geometry Playtime documentation master file, created by
    sphinx-quickstart on Sat Jul 20 06:52:05 2019.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
 
 Doctor Bob's Geometry Playtime
 ==============================
@@ -12,7 +10,6 @@ Contents:
    :maxdepth: 2
 
    intro
-
    spatial
 
 Indices and tables

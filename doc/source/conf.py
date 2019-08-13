@@ -20,7 +20,6 @@
 import os
 import sys
 sys.path.append(os.path.abspath('../..'))
-print(sys.path)
 
 # -- General configuration ------------------------------------------------
 
@@ -33,6 +32,11 @@ print(sys.path)
 # ones.
 extensions = [
     'sphinx.ext.autodoc',
+    'sphinx.ext.doctest',
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.todo',
+    'sphinx.ext.mathjax',
+    'sphinx.ext.viewcode',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
