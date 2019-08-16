@@ -24,7 +24,11 @@ will have to build scipy from the github sources.
 
    appendzero
    visible2d
+   visible3d
+   qhulldata
 
 """
 import spatial.appendzero
 import spatial.visible2d
+import spatial.visible3d
+import spatial.qhulldata
