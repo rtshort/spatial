@@ -20,15 +20,17 @@ those modifications will be generally available, but until then you
 will have to build scipy from the github sources.
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    appendzero
    visible2d
    visible3d
    qhulldata
+   pybob
 
 """
 import spatial.appendzero
 import spatial.visible2d
 import spatial.visible3d
 import spatial.qhulldata
+import spatial.pybob
