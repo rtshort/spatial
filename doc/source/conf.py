@@ -19,6 +19,7 @@
 #
 import os
 import sys
+import glob
 sys.path.append(os.path.abspath('../..'))
 
 # -- General configuration ------------------------------------------------
@@ -32,6 +33,7 @@ sys.path.append(os.path.abspath('../..'))
 # ones.
 extensions = [
     'sphinx.ext.autodoc',
+    'sphinx.ext.autosummary',
     'sphinx.ext.doctest',
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
@@ -242,6 +244,20 @@ html_static_path = ['_static']
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'DoctorBobsGeometryPlaytimedoc'
+
+# -----------------------------------------------------------------------------
+# Autosummary
+# -----------------------------------------------------------------------------
+
+autosummary_generate = glob.glob("*.rst")
+
+# -----------------------------------------------------------------------------
+# Autodoc
+# -----------------------------------------------------------------------------
+
+autodoc_default_options = {
+    'inherited-members': None,
+}
 
 # -- Options for LaTeX output ---------------------------------------------
 

@@ -19,14 +19,14 @@ from Tyler Reddy) to scipy.spatial.  When scipy 1.4.0 is released
 those modifications will be generally available, but until then you
 will have to build scipy from the github sources.
 
-.. toctree::
-   :maxdepth: 2
+.. autosummary::
+   :toctree: generated/
 
-   appendzero
-   visible2d
-   visible3d
-   qhulldata
-   pybob
+   appendzero -- script to append the origin to a qhull file
+   visible2d  -- script to play with visible facets in 2d
+   visible3d  -- script to play with visible facets in nd
+   qhulldata  -- some sample data in qhull format
+   pybob      -- some library routines
 
 """
 import spatial.appendzero

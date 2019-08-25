@@ -4,7 +4,7 @@
 appendzero - script to append the origin to a qhull file.
 =========================================================
 
-This is a script that takes a 2d qhull file on the standard input,
+This is a script that takes a qhull file on the standard input,
 appends the origin and writes the modified file to the standard output
 in qhull format.  This is mostly for experimenting with visible
 facets.  See the qhull documentation for the qhull file format.
