@@ -19,6 +19,8 @@ from Tyler Reddy) to scipy.spatial.  When scipy 1.4.0 is released
 those modifications will be generally available, but until then you
 will have to build scipy from the github sources.
 
+.. currentmodule:: spatial
+
 .. autosummary::
    :toctree: generated/
 

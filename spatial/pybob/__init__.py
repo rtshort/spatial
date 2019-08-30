@@ -2,9 +2,12 @@
 pybob - A collection of modules used by the spatial scripts
 ===========================================================
 
-.. autosummary::
+.. currentmodule:: spatial.pybob
 
-   pybob.spatial
+.. autosummary::
+   :toctree:
+
+   spatial
 
 """
 import spatial
