@@ -1,4 +1,7 @@
-.. automodule:: spatial.pybob
-   :no-members:
-   :no-inherited-members:
-   :no-special-members:
+pybob - Utilities
+=================
+
+.. toctree::
+   :maxdepth: 1
+
+   pybob.spatial

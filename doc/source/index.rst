@@ -10,7 +10,7 @@ Contents:
    :maxdepth: 2
 
    intro
-   spatial
+   geometry
 
 Indices and tables
 ==================

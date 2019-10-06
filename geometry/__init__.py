@@ -1,6 +1,6 @@
 """
-spatial
-======= 
+geometry
+========
 
 This package contains some variations and samples on the scipy.spatial
 theme.  All of the programs provided here should work right out of the
@@ -19,20 +19,19 @@ from Tyler Reddy) to scipy.spatial.  When scipy 1.4.0 is released
 those modifications will be generally available, but until then you
 will have to build scipy from the github sources.
 
-.. currentmodule:: spatial
+.. toctree::
+   :maxdepth: 1
 
-.. autosummary::
-   :toctree: generated/
-
-   appendzero -- script to append the origin to a qhull file
-   visible2d  -- script to play with visible facets in 2d
-   visible3d  -- script to play with visible facets in nd
-   qhulldata  -- some sample data in qhull format
-   pybob      -- some library routines
+   appendzero
+   visible2d
+   visible3d
+   qhulldata
+   pybob
 
 """
-import spatial.appendzero
-import spatial.visible2d
-import spatial.visible3d
-import spatial.qhulldata
-import spatial.pybob
+
+import geometry.appendzero
+import geometry.visible2d
+import geometry.visible3d
+import geometry.qhulldata
+import geometry.pybob

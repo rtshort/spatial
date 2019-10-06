@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-appendzero - script to append the origin to a qhull file.
+appendzero - append the origin to a qhull file.
 =========================================================
 
 This is a script that takes a qhull file on the standard input,

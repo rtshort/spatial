@@ -2,12 +2,9 @@
 pybob - A collection of modules used by the spatial scripts
 ===========================================================
 
-.. currentmodule:: spatial.pybob
+.. toctree::
+   :maxdepth: 1
 
-.. autosummary::
-   :toctree:
-
-   spatial
+   geometry.pybob.spatial
 
 """
-import spatial
