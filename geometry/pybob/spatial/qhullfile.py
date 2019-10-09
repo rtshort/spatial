@@ -11,6 +11,17 @@ Utilities to read and write qhull files.
 import numpy
 
 def readQhullFile(filename):
+    """
+    readQhullFile(filename)
+
+    Read data from a qhull format file.
+
+    :param filename: String with input file name.
+    
+    :returns ndim: Number of dimensions (e.g. 3 for a 3d data set).
+    :returns points: ndarray of input points.
+
+    """
 
     hullfile = open(filename)
     ndim    = int(hullfile.readline())
@@ -24,7 +35,16 @@ def readQhullFile(filename):
     return ndim, points
 
 def writeQhullFile(filename, points):
+    """
+    writeQhullFile(filename, points)
 
+    Writes data to a qhull format file.
+
+    :param filename: String with input file name.
+    :param points: ndarray of points.
+    
+
+    """
     hullfile = open(filename, 'w')
     npoints, ndim = points.shape
     

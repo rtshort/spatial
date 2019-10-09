@@ -10,7 +10,7 @@ in qhull format.  This is mostly for experimenting with visible
 facets.  See the qhull documentation for the qhull file format.
 
 Example
-+++++++
+-------
 From the command line::
 
     > cat qhulldata/visible1 | ./appendzero.py:

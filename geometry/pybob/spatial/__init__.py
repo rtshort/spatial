@@ -9,7 +9,7 @@ gods of scipy.spatial, be included in) the scipy.spatial module.
 .. toctree::
    :maxdepth: 1
 
-
+   pybob.spatial.qhullfile
 
 """
 #import geometry.pybob.spatial.qhullfile
