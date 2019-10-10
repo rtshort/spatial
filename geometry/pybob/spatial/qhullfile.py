@@ -12,14 +12,16 @@ import numpy
 
 def readQhullFile(filename):
     """
-    readQhullFile(filename)
-
     Read data from a qhull format file.
 
-    :param filename: String with input file name.
+    Parameters
+    ----------
+    filename : String with input file name.
     
-    :returns ndim: Number of dimensions (e.g. 3 for a 3d data set).
-    :returns points: ndarray of input points.
+    Returns
+    -------
+    ndim : Number of dimensions (e.g. 3 for a 3d data set).
+    points : ndarray of input points.
 
     """
 
@@ -36,13 +38,12 @@ def readQhullFile(filename):
 
 def writeQhullFile(filename, points):
     """
-    writeQhullFile(filename, points)
+    Write data to a qhull format file.
 
-    Writes data to a qhull format file.
-
-    :param filename: String with input file name.
-    :param points: ndarray of points.
-    
+    Parameters
+    ----------
+    filename : String with input file name.
+    points : ndarray of points.
 
     """
     hullfile = open(filename, 'w')

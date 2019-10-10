@@ -10,6 +10,7 @@ gods of scipy.spatial, be included in) the scipy.spatial module.
    :maxdepth: 1
 
    pybob.spatial.qhullfile
+   pybob.spatial.plotutils
 
 """
 #import geometry.pybob.spatial.qhullfile
